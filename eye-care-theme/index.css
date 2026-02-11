@@ -1,0 +1,31 @@
+:root.petal-eye-care-enabled {
+  --petal-eye-care-transition: 250ms;
+  --petal-eye-care-mix: 18%;
+  --petal-eye-care-tint: 255 242 204;
+
+  --b3-theme-background: color-mix(in srgb, var(--petal-eye-care-base-background) calc(100% - var(--petal-eye-care-mix)), rgb(var(--petal-eye-care-tint)) var(--petal-eye-care-mix));
+  --b3-theme-surface: color-mix(in srgb, var(--petal-eye-care-base-surface) calc(100% - var(--petal-eye-care-mix)), rgb(var(--petal-eye-care-tint)) var(--petal-eye-care-mix));
+  --b3-theme-surface-lighter: color-mix(in srgb, var(--petal-eye-care-base-surface-lighter) calc(100% - var(--petal-eye-care-mix)), rgb(var(--petal-eye-care-tint)) var(--petal-eye-care-mix));
+  --b3-border-color: color-mix(in srgb, var(--petal-eye-care-base-border-color) calc(100% - var(--petal-eye-care-mix)), rgb(var(--petal-eye-care-tint)) var(--petal-eye-care-mix));
+
+  --b3-protyle-code-background: color-mix(in srgb, var(--petal-eye-care-base-protyle-code-background) calc(100% - var(--petal-eye-care-mix)), rgb(var(--petal-eye-care-tint)) var(--petal-eye-care-mix));
+  --b3-theme-background-light: color-mix(in srgb, var(--petal-eye-care-base-background-light) calc(100% - var(--petal-eye-care-mix)), rgb(var(--petal-eye-care-tint)) var(--petal-eye-care-mix));
+  --b3-theme-surface-light: color-mix(in srgb, var(--petal-eye-care-base-surface-light) calc(100% - var(--petal-eye-care-mix)), rgb(var(--petal-eye-care-tint)) var(--petal-eye-care-mix));
+}
+
+:root.petal-eye-care-enabled,
+:root.petal-eye-care-enabled body,
+:root.petal-eye-care-enabled body * {
+  transition:
+    background-color var(--petal-eye-care-transition) ease,
+    color var(--petal-eye-care-transition) ease,
+    border-color var(--petal-eye-care-transition) ease,
+    box-shadow var(--petal-eye-care-transition) ease,
+    fill var(--petal-eye-care-transition) ease,
+    stroke var(--petal-eye-care-transition) ease;
+}
+
+:root.petal-eye-care-enabled ::selection {
+  background-color: color-mix(in srgb, rgb(var(--petal-eye-care-tint)) 35%, var(--b3-theme-primary) 65%);
+  color: var(--b3-theme-on-primary);
+}

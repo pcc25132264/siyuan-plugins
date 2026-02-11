@@ -1,0 +1,35 @@
+{
+  "name": "eye-care-theme",
+  "author": "SiYuan Community",
+  "url": "https://github.com/siyuan-note/siyuan",
+  "version": "0.1.0",
+  "minAppVersion": "3.5.0",
+  "disabledInPublish": false,
+  "backends": [
+    "all"
+  ],
+  "frontends": [
+    "all"
+  ],
+  "displayName": {
+    "default": "护眼模式主题",
+    "en_US": "Eye Care Theme",
+    "zh_CN": "护眼模式主题"
+  },
+  "description": {
+    "default": "全局护眼配色叠加、快捷键切换、时间智能模式与可导入导出配置。",
+    "en_US": "Global eye-care tint overlay with hotkey toggle, smart time mode, and import/export settings.",
+    "zh_CN": "全局护眼配色叠加、快捷键切换、时间智能模式与可导入导出配置。"
+  },
+  "readme": {
+    "default": "README_zh_CN.md",
+    "en_US": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "funding": null,
+  "keywords": [
+    "theme",
+    "eye-care",
+    "accessibility"
+  ]
+}
