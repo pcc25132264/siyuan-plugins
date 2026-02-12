@@ -1,0 +1,31 @@
+{
+  "name": "mindchain-flow",
+  "author": "SiYuan Community",
+  "url": "https://github.com/siyuan-note/siyuan",
+  "version": "0.1.0",
+  "minAppVersion": "3.5.0",
+  "disabledInPublish": false,
+  "backends": [
+    "all"
+  ],
+  "frontends": [
+    "all"
+  ],
+  "displayName": {
+    "default": "思维链",
+    "en_US": "MindChain",
+    "zh_CN": "思维链"
+  },
+  "description": {
+    "default": "基于 @xyflow/react 的思维链页面插件，支持 Protyle 富文本节点编辑与多模板流程图。",
+    "en_US": "A MindChain page plugin based on @xyflow/react, with Protyle rich-text node editing and built-in templates.",
+    "zh_CN": "基于 @xyflow/react 的思维链页面插件，支持 Protyle 富文本节点编辑与多模板流程图。"
+  },
+  "funding": null,
+  "keywords": [
+    "mindchain",
+    "flow",
+    "reactflow",
+    "xyflow"
+  ]
+}
