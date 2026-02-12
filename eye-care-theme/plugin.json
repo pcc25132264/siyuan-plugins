@@ -2,7 +2,7 @@
   "name": "eye-care-theme",
   "author": "SiYuan Community",
   "url": "https://github.com/siyuan-note/siyuan",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "minAppVersion": "3.5.0",
   "disabledInPublish": false,
   "backends": [

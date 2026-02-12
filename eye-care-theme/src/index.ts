@@ -1,6 +1,20 @@
 declare function require(name: string): any;
 
-type PresetId = "yellow" | "green" | "gray" | "custom";
+type PresetId =
+  | "yellow"
+  | "green"
+  | "gray"
+  | "almond"
+  | "rose"
+  | "lavender"
+  | "cyan"
+  | "alice"
+  | "honey"
+  | "cornsilk"
+  | "antique"
+  | "wheat"
+  | "parchment"
+  | "custom";
 
 type RGB = { r: number; g: number; b: number };
 
@@ -40,6 +54,16 @@ const PRESET_RGB: Record<Exclude<PresetId, "custom">, RGB> = {
   yellow: { r: 255, g: 242, b: 204 },
   green: { r: 221, g: 244, b: 230 },
   gray: { r: 237, g: 237, b: 237 },
+  almond: { r: 255, g: 235, b: 205 },
+  rose: { r: 255, g: 228, b: 225 },
+  lavender: { r: 230, g: 230, b: 250 },
+  cyan: { r: 224, g: 255, b: 255 },
+  alice: { r: 240, g: 248, b: 255 },
+  honey: { r: 240, g: 255, b: 240 },
+  cornsilk: { r: 255, g: 248, b: 220 },
+  antique: { r: 250, g: 235, b: 215 },
+  wheat: { r: 245, g: 222, b: 179 },
+  parchment: { r: 253, g: 245, b: 230 },
 };
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
@@ -129,7 +153,24 @@ const buildConfig = (raw: any): EyeCareConfig => {
       end: String(pick(raw?.smartTime, "end", DEFAULT_CONFIG.smartTime.end)),
     },
   };
-  if (!["yellow", "green", "gray", "custom"].includes(cfg.preset)) {
+  if (
+    ![
+      "yellow",
+      "green",
+      "gray",
+      "almond",
+      "rose",
+      "lavender",
+      "cyan",
+      "alice",
+      "honey",
+      "cornsilk",
+      "antique",
+      "wheat",
+      "parchment",
+      "custom",
+    ].includes(cfg.preset)
+  ) {
     cfg.preset = DEFAULT_CONFIG.preset;
   }
   cfg.opacity = clamp(Number.isFinite(cfg.opacity) ? cfg.opacity : DEFAULT_CONFIG.opacity, 0, 0.5);
@@ -387,13 +428,41 @@ export default class EyeCareThemePlugin extends Plugin {
       { id: "yellow", label: this.t("presetYellow", "Soft yellow") },
       { id: "green", label: this.t("presetGreen", "Soft green") },
       { id: "gray", label: this.t("presetGray", "Soft gray") },
+      { id: "almond", label: this.t("presetAlmond", "Almond") },
+      { id: "rose", label: this.t("presetRose", "Rose") },
+      { id: "lavender", label: this.t("presetLavender", "Lavender") },
+      { id: "cyan", label: this.t("presetCyan", "Cyan") },
+      { id: "alice", label: this.t("presetAlice", "Alice Blue") },
+      { id: "honey", label: this.t("presetHoney", "Honeydew") },
+      { id: "cornsilk", label: this.t("presetCornsilk", "Cornsilk") },
+      { id: "antique", label: this.t("presetAntique", "Antique White") },
+      { id: "wheat", label: this.t("presetWheat", "Wheat") },
+      { id: "parchment", label: this.t("presetParchment", "Parchment") },
       { id: "custom", label: this.t("presetCustom", "Custom") },
     ];
     select.innerHTML = options.map((o) => `<option value="${o.id}">${o.label}</option>`).join("");
     select.value = this.config.preset;
     select.addEventListener("change", () => {
       const next = select.value as PresetId;
-      if (!["yellow", "green", "gray", "custom"].includes(next)) return;
+      if (
+        ![
+          "yellow",
+          "green",
+          "gray",
+          "almond",
+          "rose",
+          "lavender",
+          "cyan",
+          "alice",
+          "honey",
+          "cornsilk",
+          "antique",
+          "wheat",
+          "parchment",
+          "custom",
+        ].includes(next)
+      )
+        return;
       this.config.preset = next;
       this.applyTheme();
       this.persistConfigDebounced();
